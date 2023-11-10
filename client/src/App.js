@@ -1,29 +1,27 @@
 import "./App.css";
-import LoginButton from "./components/login";
-import LogoutButton from "./components/logout";
+// import LoginButton from "./components/login";
+// import LogoutButton from "./components/logout";
 import Navbar from "./components/Navbar";
-import { useEffect } from "react";
-import { gapi } from "gapi-script";
+// import { useEffect } from "react";
+// import { gapi } from "gapi-script";
 
-const clientId =
-  "392990046278-n7s7ihp71s35g0o2ps53nh2e4g09soab.apps.googleusercontent.com";
+// const clientId =
+//   "392990046278-n7s7ihp71s35g0o2ps53nh2e4g09soab.apps.googleusercontent.com";
 
 function App() {
 
-  useEffect(()=>{
-    function start(){
-      gapi.client.init({
-        clientId: clientId,
-        scope: ""
-      })
-    }
-    gapi.load('client:auth2', start)
-  })
+  // useEffect(()=>{
+  //   function start(){
+  //     gapi.client.init({
+  //       clientId: clientId,
+  //       scope: ""
+  //     })
+  //   }
+  //   gapi.load('client:auth2', start)
+  // })
 
   return <div>
     <Navbar/>
-    <LoginButton/>
-    <LogoutButton/>
   </div>
 }
 
