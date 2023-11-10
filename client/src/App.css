@@ -1,6 +1,18 @@
 /*
 ! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
 */
+.light-green-text {
+  color: #a8cf45;
+}
+.green-text {
+  color: #799e29;
+}
+.light-green-bg {
+  background-color: #a8cf45;
+}
+.green-bg {
+  background-color: #799e29;
+}
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
