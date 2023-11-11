@@ -5,6 +5,7 @@ import store from "./store"; // Import the store
 import Navbar from "./components/Navbar";
 import { jwtDecode } from "jwt-decode";
 import "./App.css";
+import TestNav from "./components/TestNav"
 
 const App = () => {
   const user = useSelector(state => state.user); // Get the user from the Redux store
@@ -16,10 +17,10 @@ const App = () => {
       client_id: "392990046278-n7s7ihp71s35g0o2ps53nh2e4g09soab.apps.googleusercontent.com",
       callback: handleCallbackResponse,
     });
-    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-      theme: "outline",
-      size: "large",
-    });
+    // google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+    //   theme: "outline",
+    //   size: "large",
+    // });
     google.accounts.id.prompt()
   }, []);
 
@@ -39,7 +40,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <div>
-        <Navbar />
+        <TestNav/>
         <div id="signInDiv" hidden={user !== null}></div>
         {user && Object.keys(user).length !== 0 && (
           <button onClick={handleSignOut}>Sign Out</button>
