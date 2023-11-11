@@ -5,13 +5,11 @@ import ProfilePhoto from "./ProfilePhoto";
 
 const Navbar = (props) => {
 
-  let isLoggedIn = true
-
 
   return (
     <>
       {/* First Navbar */}
-      <div className="bg-success-subtle border border-gray-200 flex justify-between items-center p-1 text-dark">
+      <div className="flex items-center justify-between p-1 border border-gray-200 bg-success-subtle text-dark">
         <div className="flex p-1">
           <a className="p-1" href="#">
             English
@@ -20,7 +18,7 @@ const Navbar = (props) => {
             About Us
           </a>
         </div>
-        <div className="flex p-1 items-center">
+        <div className="flex items-center p-1">
           <a href="#">Contact Us</a>
           <img
             className="p-1 ms-2"
@@ -46,7 +44,7 @@ const Navbar = (props) => {
         </div>
       </div>
       {/* Second nav bar */}
-      <div className="sticky-top d-flex justify-evenly align-items-center bg-white border border-gray-200">
+      <div className="bg-white border border-gray-200 sticky-top d-flex justify-evenly align-items-center">
         <img
           src="/static/images/EarthlyEthosLogo.png"
           alt="earthly ethos logo"
@@ -61,9 +59,9 @@ const Navbar = (props) => {
           </select>
         </div>
         <form action="#">
-          <div className="input-group md-form form-sm form-2 pl-0">
+          <div className="pl-0 input-group md-form form-sm form-2">
             <input
-              className="form-control my-0 py-1 border border-gray input-nav-bar"
+              className="py-1 my-0 border form-control border-gray input-nav-bar"
               type="text"
               placeholder="Search"
               aria-label="Search"
@@ -81,7 +79,7 @@ const Navbar = (props) => {
             </div>
           </div>
         </form>
-        <ProfilePhoto isLoggedIn={isLoggedIn} />
+        <ProfilePhoto />
         <div>
           <button className="d-flex btn btn-outline-success align-items-center">
             <img
