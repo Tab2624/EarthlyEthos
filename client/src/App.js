@@ -20,6 +20,7 @@ const App = () => {
       theme: "outline",
       size: "large",
     });
+    google.accounts.id.prompt()
   }, []);
 
   // grab user data and hide sign in div after sign in completion
