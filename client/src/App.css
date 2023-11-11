@@ -13,6 +13,11 @@
 .green-bg {
   background-color: #799e29;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
+
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
