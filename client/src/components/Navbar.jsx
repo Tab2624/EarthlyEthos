@@ -9,7 +9,10 @@ const Navbar = (props) => {
   return (
     <>
       {/* First Navbar */}
-      <div className="flex items-center justify-between p-1 border border-gray-200 bg-success-subtle text-dark">
+      <div className="fixed-top">
+
+
+      <div className="flex items-center justify-between p-1 border border-gray-200 bg-success-subtle text-dark ">
         <div className="flex p-1">
           <a className="p-1" href="#">
             English
@@ -91,6 +94,7 @@ const Navbar = (props) => {
             - $0.00
           </button>
         </div>
+      </div>
       </div>
     </>
   );

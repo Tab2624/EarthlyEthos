@@ -15,6 +15,8 @@ const Navbar = (props) => {
   }, []);
   return (
     <>
+    <div className="fixed-top">
+
       {/* First Navbar */}
       <div className="flex items-center justify-between p-1 border border-gray-200 bg-success-subtle text-dark">
         <div className="flex p-1">
@@ -166,6 +168,8 @@ const Navbar = (props) => {
           </button>
         </div>
       </div>
+    </div>
+
     </>
   );
 };

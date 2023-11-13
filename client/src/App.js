@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import { jwtDecode } from "jwt-decode";
 import "./App.css";
 import TestNav from "./components/TestNav"
+import Landing from "./components/Landing";
 
 const App = () => {
   const user = useSelector(state => state.user); // Get the user from the Redux store
@@ -46,6 +47,7 @@ const App = () => {
           <button onClick={handleSignOut}>Sign Out</button>
         )}
       </div>
+      <Landing/>
     </Provider>
   );
 };
