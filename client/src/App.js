@@ -5,6 +5,7 @@ import store from "./store"; // Import the store
 import "./App.css";
 import TestNav from "./components/TestNav"
 import Landing from "./components/Landing";
+import Footer from "./components/Footer";
 
 const App = () => {
   
@@ -20,6 +21,7 @@ const App = () => {
         )} */}
       </div>
       <Landing/>
+      <Footer/>
     </Provider>
   );
 };
