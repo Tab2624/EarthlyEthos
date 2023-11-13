@@ -4,8 +4,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../App.css";
 import ProfilePhoto from "./ProfilePhoto";
 
-
-
 const Navbar = (props) => {
   const dropdownRef = useRef(null);
 
@@ -61,15 +59,17 @@ const Navbar = (props) => {
         />
 
         {/* Dropdown menu */}
-        <div className="ms-3 me-3 dropdown">
+        <div class="btn-group ">
+          <button type="button" class="btn btn-outline-success success-text">
+            Shop
+          </button>
           <button
-            className="btn btn-secondary dropdown-toggle"
             type="button"
-            id="dropdownMenuButton"
+            class="btn btn-outline-success success-text dropdown-toggle dropdown-toggle-split"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Shop
+            <span class="visually-hidden">Toggle Dropdown</span>
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <div className="d-flex">
@@ -121,7 +121,14 @@ const Navbar = (props) => {
                 </a>
               </li>
             </div>
+          <hr />
+          <li>
+          <a className="dropdown-item" href="#">
+                  All Categories
+                  </a>
+          </li>
           </ul>
+
         </div>
 
         {/* Other Navbar Elements */}

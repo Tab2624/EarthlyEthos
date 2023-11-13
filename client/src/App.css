@@ -18,6 +18,13 @@ a {
   color: black;
 }
 
+#profileBox {
+  right: 275px;
+  top: 100px;
+}
+#profileBox button {
+margin: 5px;
+}
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
