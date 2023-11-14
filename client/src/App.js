@@ -7,7 +7,8 @@ import "./App.css";
 import TestNav from "./components/TestNav"
 import Landing from "./components/Landing";
 import Footer from "./components/Footer";
-import Shop from "./components/CategoryOne";
+import CategoryOne from "./components/CategoryOne";
+import Shop from "./components/Shop";
 
 const App = () => {
   
@@ -22,6 +23,8 @@ const App = () => {
         )} */}
         <Routes>
           <Route path="/" element={<Landing/>}/>
+          <Route path="/category/" element={<CategoryOne/>}/>
+          <Route path="/category/:categoryname" element={<CategoryOne/>}/>
           <Route path="/shop" element={<Shop/>}/>
         </Routes>
       <Footer/>

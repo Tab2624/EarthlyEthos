@@ -103,10 +103,10 @@ margin: 5px;
   margin-left: 12px;
 }
 .width-300 {
-  width: 300px;
+  width: 275px;
 }
 .height-300 {
-  height: 300px;
+  height: 275px;
 }
 
 .rowToMove {
@@ -128,7 +128,7 @@ margin: 5px;
   background-size: cover;
 }
 .large-margin-top {
-  margin-top: 100px;
+  margin-top: 125px;
 }
 #large-hero-shop h1 {
   padding-top: 200px;
@@ -172,7 +172,34 @@ margin: 5px;
 .margin-bottom {
   margin-bottom: 50px;
 }
+.flex-short {
+  flex: 1;
+}
+.margin-top-x {
+  margin-top: 150px;
+}
+.margin-bottom-x {
+  margin-bottom: 150px;
+}
 
+#shop-trending {
+  background-image: url(https://shoezero.com/cdn/shop/articles/user8384737_a_product_photo_of_a_pair_of_eco-friendly_running_s_d2f1dbfd-78e7-432d-a97f-9ead1fc4cc0a.png?v=1690496235&width=2048);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#shop-new {
+  background-image: url(https://avadaio_assets.storage.googleapis.com/uploads/2023/10/02071539/trending_niches_2022_2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#shop-hot {
+  background-image: url(https://blog.skanem.in/hubfs/Blog/Images%20India/Republications/2023%20Eco-Friendly%20and%20sustainability%20trends%20within%20packaging%20and%20labelling.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
