@@ -21,16 +21,19 @@ const generateProductName = (category) => {
 // Function to create a fake product
 const createFakeProduct = (category) => {
   try {
-    const productName = generateProductName(category);
-    const description = faker.commerce.productDescription(category);
+    const productName = faker.commerce.productName();
+    const description = faker.commerce.productDescription();
     const price = faker.commerce.price(category);
+    const image = faker.image.url(); // Add this line to generate a fake image URL
+    console.log(image)
 
-    return { productName, price, description, category: null }; // Initialize category as null
+    return { productName, price, description, category: null, image }; // Initialize category as null
   } catch (error) {
     console.error("Error creating fake product:", error);
     throw error;
   }
 };
+
 
 const addFakeProductToCategory = async (categoryName) => {
   try {
@@ -107,13 +110,23 @@ const getAllProducts = async (req, res) => {
     const allCategories = await Category.find().populate({
       path: 'products',
       model: 'Product', // Specify the model to populate (should match the model name)
+      select: 'productName price reviews image description', // Include the 'image' field
     });
 
-    res.status(200).json({ categories: allCategories });
+    // Map the products in each category to include the image property
+    const categoriesWithImages = allCategories.map(category => {
+      const productsWithImages = category.products.map(product => ({
+        ...product.toObject(), // Convert Mongoose document to plain JavaScript object
+      }));
+      return { ...category.toObject(), products: productsWithImages };
+    });
+
+    res.status(200).json({ categories: categoriesWithImages });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
+
 
 
 // Route handler to clear all products
