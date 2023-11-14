@@ -66,6 +66,11 @@ margin: 5px;
   text-shadow: 0px 0px 5px black;
   justify-content: center;
 }
+.new-title {
+  text-shadow: 0px 0px 5px black;
+  color: white;
+
+}
 #category-home-1 {
   background-image: url(https://hips.hearstapps.com/hmg-prod/images/190423-institute-sustanable-clothing-1556057761.png?crop=1.00xw:1.00xh;0,0&resize=1200:*);
   background-repeat: no-repeat;
@@ -116,6 +121,58 @@ margin: 5px;
   display: flex;
   scroll-behavior: smooth;
 }
+#large-hero-shop {
+  background-image: url(https://wallpapers.com/images/hd/environment-background-c2ut7fq0hpz6my6c.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.large-margin-top {
+  margin-top: 100px;
+}
+#large-hero-shop h1 {
+  padding-top: 200px;
+  padding-bottom: 100px;
+  text-shadow: 0px 0px 6px black;
+}
+#large-hero-shop {
+  text-shadow: 0px 0px 6px black;
+}
+#large-hero-shop button {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+#trending-cat-one {
+  background-image: url(https://shoezero.com/cdn/shop/articles/user8384737_a_product_photo_of_a_pair_of_eco-friendly_running_s_d2f1dbfd-78e7-432d-a97f-9ead1fc4cc0a.png?v=1690496235&width=2048);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1
+}
+#new-cat-one {
+  background-image: url(https://avadaio_assets.storage.googleapis.com/uploads/2023/10/02071539/trending_niches_2022_2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1
+}
+#hot-cat-one {
+  background-image: url(https://blog.skanem.in/hubfs/Blog/Images%20India/Republications/2023%20Eco-Friendly%20and%20sustainability%20trends%20within%20packaging%20and%20labelling.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1
+}
+.margin-top {
+  margin-top: 50px;
+}
+.margin-top-more {
+  margin-top: 150px;
+}
+.margin-bottom {
+  margin-bottom: 50px;
+}
+
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)

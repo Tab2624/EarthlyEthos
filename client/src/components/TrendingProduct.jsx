@@ -9,7 +9,7 @@ const TrendingProduct = (props) => {
 
               <img src={props.product.image} className="width-300 height-300" alt={props.product.name} />
               <div className="mt-3">
-                <h5>{props.product.name}</h5>
+                <h5>{props.product.name} <span class="badge text-bg-secondary">Trending</span></h5>
                 <hr />
                   <p>{props.product.description}</p>
                   <div className='d-flex justify-around'>
