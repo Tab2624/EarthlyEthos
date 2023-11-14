@@ -99,7 +99,7 @@ const ProfilePhoto = (props) => {
       {isProfileBoxOpen && ( // Display the profile box when open
         <div
           id="profileBox"
-          className="fixed p-3 bg-white border rounded">
+          className="fixed p-3 bg-white border rounded shadow">
           <div className="items-center justify-between d-flex">
             <h5>Welcome: {user.name}</h5>
             <button onClick={closeProfilePopup}>❌</button>{" "}

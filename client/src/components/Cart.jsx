@@ -49,6 +49,13 @@ const Cart = (props) => {
           description: "Reuseable silicone lids",
           price: 9.99,
         },
+        {
+          name: "Cow Statue",
+          image:
+            "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1681744106-orblue-silicone-stretch-lids-643d60d5ac251.jpg?crop=1xw:1xh;center,top&resize=980:*",
+          description: "Small cow statuette",
+          price: 9.99,
+        }
       ];
 
       function calculateTotal(products) {

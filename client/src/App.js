@@ -11,6 +11,7 @@ import CategoryOne from "./components/CategoryOne";
 import Shop from "./components/Shop";
 import Cart from "./components/Cart";
 import AboutUs from "./components/AboutUs";
+import ProductViewOne from "./components/ProductViewOne";
 
 const App = () => {
   
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/shop" element={<Shop/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/about-us" element={<AboutUs/>}/>
+          <Route path="/product/:id" element={<ProductViewOne/>}/>
         </Routes>
       <Footer/>
     </Provider>
