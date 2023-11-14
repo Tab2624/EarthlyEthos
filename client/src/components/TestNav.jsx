@@ -20,12 +20,8 @@ const Navbar = (props) => {
         {/* First Navbar */}
         <div className="flex items-center justify-between p-1 border border-gray-200 bg-success-subtle text-dark">
           <div className="flex p-1">
-            <a className="p-1" href="#">
-              English
-            </a>
-            <a className="p-1" href="#">
-              About Us
-            </a>
+            <Link className="p-1" to="/">English</Link>
+            <Link className="p-1" to="/about-us">About Us</Link>
           </div>
           <div className="flex items-center p-1">
             <a href="#">Contact Us</a>
@@ -53,7 +49,7 @@ const Navbar = (props) => {
           </div>
         </div>
         {/* Second nav bar */}
-        <div className="justify-between bg-white border border-gray-200 sticky-top d-flex align-items-center">
+        <div className="justify-between bg-white border border-gray-200 sticky-top d-flex align-items-center pe-2 ps-2">
           <img
             src="/static/images/EarthlyEthosLogo.png"
             alt="earthly ethos logo"
@@ -62,11 +58,9 @@ const Navbar = (props) => {
 
           {/* Dropdown menu */}
           <div class="btn-group ">
-            <button type="button">
               <Link class="btn btn-outline-success success-text" to="/shop">
                 Shop
               </Link>
-            </button>
             <button
               type="button"
               class="btn btn-outline-success success-text dropdown-toggle dropdown-toggle-split"
@@ -75,7 +69,7 @@ const Navbar = (props) => {
             >
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <ul className="dropdown-menu shadow" aria-labelledby="dropdownMenuButton">
               <div className="d-flex">
                 <li>
                   <Link className="dropdown-item" to="/">
