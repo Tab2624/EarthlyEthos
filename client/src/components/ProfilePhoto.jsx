@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 import store from "../store"; // Import the store
@@ -81,8 +82,10 @@ const ProfilePhoto = (props) => {
 
   // JSX to render the profile photo and associated functionalities
   return user && user.email_verified ? (
-    <div className="justify-between d-flex align-items-center">
-      <p>Welcome {user.name}!</p>
+    <div className="justify-between d-flex">
+      <div className="d-flex align-items-center">
+
+      <h6 className="mt-2">Welcome {user.name}!</h6>
       <img
         className="m-2 border border-dark rounded-circle"
         width="30"
@@ -90,21 +93,22 @@ const ProfilePhoto = (props) => {
         src={user.picture}
         alt="person-male"
         onClick={openProfilePopup} // Clicking to open the profile popup
-      />
+        />
+        </div>
       {isProfileBoxOpen && ( // Display the profile box when open
         <div
           id="profileBox"
-          className="fixed p-3 border rounded bg-light border-dark">
-          <div className="justify-between d-flex align-items-center">
-            <h1>{user.name}</h1>
+          className="fixed p-3 border rounded bg-white">
+          <div className="justify-between d-flex items-center">
+            <h5>Welcome: {user.name}</h5>
             <button onClick={closeProfilePopup}>❌</button>{" "}
             {/* Close the profile box */}
           </div>
           <hr />
           {/* Various profile options */}
-          <button className="btn btn-outline-success">View Cart</button>
-          <button className="btn btn-outline-success">Orders</button>
-          <button className="btn btn-outline-success">Reviews</button>
+          <Link to="/cart" onClick={closeProfilePopup} className="btn btn-outline-success">View Cart</Link>
+          <button onClick={closeProfilePopup} className="btn btn-outline-success">Orders</button>
+          <button onClick={closeProfilePopup} className="btn btn-outline-success">Reviews</button>
           <hr />
           <button className="btn btn-danger" onClick={handleSignOut}>
             Logout

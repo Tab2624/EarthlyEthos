@@ -9,6 +9,8 @@ import Landing from "./components/Landing";
 import Footer from "./components/Footer";
 import CategoryOne from "./components/CategoryOne";
 import Shop from "./components/Shop";
+import Cart from "./components/Cart";
+import AboutUs from "./components/AboutUs";
 
 const App = () => {
   
@@ -26,6 +28,8 @@ const App = () => {
           <Route path="/category/" element={<CategoryOne/>}/>
           <Route path="/category/:categoryname" element={<CategoryOne/>}/>
           <Route path="/shop" element={<Shop/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/about-us" element={<AboutUs/>}/>
         </Routes>
       <Footer/>
     </Provider>
