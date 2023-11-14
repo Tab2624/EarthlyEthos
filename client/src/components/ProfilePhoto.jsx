@@ -53,6 +53,7 @@ const ProfilePhoto = (props) => {
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID token: ", response.credential);
     let userObject = jwtDecode(response.credential);
+    console.log(userObject)
 
     // Dispatch the user information to the Redux store
     store.dispatch({ type: "SET_USER", payload: userObject });
@@ -98,8 +99,8 @@ const ProfilePhoto = (props) => {
       {isProfileBoxOpen && ( // Display the profile box when open
         <div
           id="profileBox"
-          className="fixed p-3 border rounded bg-white">
-          <div className="justify-between d-flex items-center">
+          className="fixed p-3 bg-white border rounded">
+          <div className="items-center justify-between d-flex">
             <h5>Welcome: {user.name}</h5>
             <button onClick={closeProfilePopup}>❌</button>{" "}
             {/* Close the profile box */}
