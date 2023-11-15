@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Accordion from "react-bootstrap/Accordion";
 import TrashCan from "./TrashCan";
-import { useSelector } from "react-redux";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 const Checkout = (props) => {
-  const user = useSelector((state) => state.user);
-  console.log(user)
   const [price, setPrice] = useState(0);
   const [shippingCost, setShippingCost] = useState("1");
   const [newPrice, setNewPrice] = useState(price);
@@ -171,7 +168,7 @@ const Checkout = (props) => {
               {products.map((product) => (
                 <div
                   id={product.name}
-                  className="justify-between p-1 m-1 w-100 border-bottom d-flex"
+                  className="w-100 border-bottom d-flex justify-between p-1 m-1"
                 >
                   <p>{product.name}</p>
                   <div className="d-flex">
@@ -180,7 +177,7 @@ const Checkout = (props) => {
                   </div>
                 </div>
               ))}
-              <div className="justify-between p-1 m-2 w-100 border-bottom d-flex">
+              <div className="w-100 border-bottom d-flex justify-between p-1 m-2">
                 <h5>Net Total</h5>
                 <h5>$ {price}</h5>
               </div>
@@ -235,7 +232,7 @@ const Checkout = (props) => {
                   $6.99 Shipping -- 1-2 Buisness Days
                 </label>
               </div>
-              <div className="justify-between p-1 m-2 w-100 border-bottom d-flex">
+              <div className="w-100 border-bottom d-flex justify-between p-1 m-2">
                 <h3>Total</h3>
                 <h3>$ {newPrice}</h3>
               </div>
@@ -293,13 +290,12 @@ const Checkout = (props) => {
                     {error}
                   </p>
                 ))}
-                <div className="justify-between d-flex">
-                  <div className="mb-3 input-group me-3">
+                <div className="d-flex justify-between">
+                  <div className="input-group mb-3 me-3">
                     <span className="input-group-text" id="basic-addon1">
                       First Name
                     </span>
                     <input
-                      value={user.given_name}
                       type="text"
                       className="form-control"
                       placeholder="First Name..."
@@ -308,12 +304,11 @@ const Checkout = (props) => {
                       }}
                     />
                   </div>
-                  <div className="mb-3 input-group">
+                  <div className="input-group mb-3">
                     <span className="input-group-text" id="basic-addon1">
                       Last Name
                     </span>
                     <input
-                    value={user.family_name}
                       type="text"
                       className="form-control"
                       placeholder="Last Name..."
@@ -323,7 +318,7 @@ const Checkout = (props) => {
                     />
                   </div>
                 </div>
-                <div className="mb-3 input-group">
+                <div className="input-group mb-3">
                   <span className="input-group-text" id="basic-addon1">
                     Address
                   </span>
@@ -336,7 +331,7 @@ const Checkout = (props) => {
                     }}
                   />
                 </div>
-                <div className="mb-3 input-group">
+                <div className="input-group mb-3">
                   <span className="input-group-text" id="basic-addon1">
                     Address (optional)
                   </span>
@@ -346,8 +341,8 @@ const Checkout = (props) => {
                     placeholder="Apt, Lot, Ste..."
                   />
                 </div>
-                <div className="justify-between d-flex">
-                  <div className="mb-3 input-group me-3">
+                <div className="d-flex justify-between">
+                  <div className="input-group mb-3 me-3">
                     <span className="input-group-text " id="basic-addon1">
                       Zip code
                     </span>
@@ -360,7 +355,7 @@ const Checkout = (props) => {
                       }}
                     />
                   </div>
-                  <div className="mb-3 input-group me-3">
+                  <div className="input-group mb-3 me-3">
                     <span className="input-group-text " id="basic-addon1">
                       City
                     </span>
@@ -373,7 +368,7 @@ const Checkout = (props) => {
                       }}
                     />
                   </div>
-                  <div className="mb-3 input-group">
+                  <div className="input-group mb-3">
                     <span className="input-group-text" id="basic-addon1">
                       State
                     </span>
@@ -395,7 +390,7 @@ const Checkout = (props) => {
                 ))}
                 <br />
                 <p className="badge text-bg-danger me-2">{ fieldError3() }</p>
-                <div className="mb-3 input-group">
+                <div className="input-group mb-3">
                   <span className="input-group-text" id="basic-addon1">
                     Phone Number
                   </span>
@@ -408,13 +403,12 @@ const Checkout = (props) => {
                     }}
                   />
                 </div>
-                <div className="justify-between d-flex">
-                  <div className="mb-3 input-group me-3">
+                <div className="d-flex justify-between">
+                  <div className="input-group mb-3 me-3">
                     <span className="input-group-text" id="basic-addon1">
                       Email
                     </span>
                     <input
-                      value={user.email}
                       type="text"
                       className="form-control"
                       placeholder="123@example.com..."
@@ -423,7 +417,7 @@ const Checkout = (props) => {
                       }}
                     />
                   </div>
-                  <div className="mb-3 input-group">
+                  <div className="input-group mb-3">
                     <span className="input-group-text" id="basic-addon1">
                       Confirm Email
                     </span>
@@ -473,8 +467,8 @@ const Checkout = (props) => {
                     {error}
                   </p>
                 ))}
-              <div className="justify-between d-flex">
-                <div className="mb-3 input-group me-3">
+              <div className="d-flex justify-between">
+                <div className="input-group mb-3 me-3">
                   <span className="input-group-text" id="basic-addon1">
                     First Name
                   </span>
@@ -487,7 +481,7 @@ const Checkout = (props) => {
                     }}
                   />
                 </div>
-                <div className="mb-3 input-group">
+                <div className="input-group mb-3">
                   <span className="input-group-text" id="basic-addon1">
                     Last Name
                   </span>
@@ -501,7 +495,7 @@ const Checkout = (props) => {
                   />
                 </div>
               </div>
-              <div className="mb-3 input-group">
+              <div className="input-group mb-3">
                 <span className="input-group-text" id="basic-addon1">
                   Address
                 </span>
@@ -514,7 +508,7 @@ const Checkout = (props) => {
                   }}
                 />
               </div>
-              <div className="mb-3 input-group">
+              <div className="input-group mb-3">
                 <span className="input-group-text" id="basic-addon1">
                   Address (optional)
                 </span>
@@ -524,12 +518,9 @@ const Checkout = (props) => {
                   placeholder="Apt, Lot, Ste..."
                 />
               </div>
-              <div className="justify-between d-flex">
-                <div className="mb-3 input-group me-3">
+              <div className="d-flex justify-between">
+                <div className="input-group mb-3 me-3">
                   <span className="input-group-text " id="basic-addon1">
-              <div className="justify-between d-flex">
-                <div class="input-group mb-3 me-3">
-                  <span class="input-group-text " id="basic-addon1">
                     Zip code
                   </span>
                   <input
@@ -541,7 +532,7 @@ const Checkout = (props) => {
                     }}
                   />
                 </div>
-                <div className="mb-3 input-group me-3">
+                <div className="input-group mb-3 me-3">
                   <span className="input-group-text " id="basic-addon1">
                     City
                   </span>
@@ -554,7 +545,7 @@ const Checkout = (props) => {
                     }}
                   />
                 </div>
-                <div className="mb-3 input-group">
+                <div className="input-group mb-3">
                   <span className="input-group-text" id="basic-addon1">
                     State
                   </span>
@@ -582,10 +573,9 @@ const Checkout = (props) => {
                 information and will NOT charge you, and you will NOT recieve
                 any products that you have "purchased".
               </p>
-              <Link className="mt-3 btn btn-success" to="/thank-you">
+              <Link className="btn btn-success mt-3" to="/thank-you">
                 Submit Order
               </Link>
-              <Link className="mt-3 btn btn-success" to="/thank-you">Submit Order</Link>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
