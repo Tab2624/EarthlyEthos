@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import TrashCan from './TrashCan';
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 const Cart = (props) => {
-
     const [ price, setPrice ] = useState(0);
 
     const products = [
@@ -69,13 +68,13 @@ const Cart = (props) => {
       useEffect(() => {
         const total = calculateTotal(products);
         setPrice(total);
-      }, [products]);
+      }, []);
 
   return (
     <div className='container large-margin-top-2'>
-        <div className='border mt-5 rounded p-2'>
+        <div className='p-2 mt-5 border rounded'>
             {products.map((product) => (
-        <div id={product.name} className='w-100 border-bottom d-flex justify-between p-1 m-1'>
+        <div id={product.name} className='justify-between p-1 m-1 w-100 border-bottom d-flex'>
             <p>{product.name}</p>
             <div className='d-flex'>
                 <p>$ {product.price}</p>
@@ -83,13 +82,13 @@ const Cart = (props) => {
             </div>
         </div>
             ))}
-            <Link to="/shop" className="btn btn-outline-success m-2">Continue Shopping</Link>
+            <Link to="/shop" className="m-2 btn btn-outline-success">Continue Shopping</Link>
         </div>
-        <div className="w-100 border-bottom d-flex justify-between p-1 m-2">
+        <div className="justify-between p-1 m-2 w-100 border-bottom d-flex">
             <h3>Total</h3>
             <h3>$ {price}</h3>
         </div>
-        <div className="d-flex justify-center">
+        <div className="justify-center d-flex">
         <Link to="/checkout" className="btn btn-success w-25">Continue to Checkout</Link>
         </div>
     </div>
