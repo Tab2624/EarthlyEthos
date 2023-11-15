@@ -1,6 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
+import { useParams, Link } from "react-router-dom";
+
 
 const TrendingProduct = (props) => {
 
@@ -27,7 +29,7 @@ const TrendingProduct = (props) => {
           <hr />
           <p>{props.product.description}</p>
           <div className="justify-around d-flex">
-            <button className="shadow btn btn-primary">View Product</button>
+            <Link to="/products/:id" className="shadow btn btn-primary">View Product</Link>
             <button className="shadow btn btn-success">Add to cart</button>
           </div>
         </div>
