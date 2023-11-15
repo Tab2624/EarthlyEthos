@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = (props) => {
   return (
-    <>
-    <div className="d-flex m-3 border-top mt-5">
-      <div className="w-50 m-3 text-center">
+    <div>
+    <div className="m-3 mt-5 d-flex border-top ">
+      <div className="m-3 text-center w-50">
         <h4>About</h4>
         <p>
             EarthlyEthos is about providing eco-friendly products at a reasonal price to try and save the planet one product at a time. EarthlyEthos strives to better the enviroment not just for us but for you and future generations.
@@ -20,7 +20,7 @@ const Footer = (props) => {
       </div>
 
         
-      <div className="w-25 m-3">
+      <div className="m-3 w-25">
         <ul>
           <li>
             <h5>Information</h5>
@@ -36,7 +36,7 @@ const Footer = (props) => {
           </li>
         </ul>
       </div>
-      <div className="w-25 m-3">
+      <div className="m-3 w-25">
         <ul>
           <li>
             <h5>Contact</h5>
@@ -76,12 +76,12 @@ const Footer = (props) => {
         />
     </div>
     <footer>
-        <div className="d-flex justify-around">
+        <div className="justify-around d-flex">
         <p>icons by <a href="https://icons8.com/icons">Icons8</a></p>
         <p>&copy; 2023 EarthlyEthos. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
-    </>
+    </div>
   );
 };
 
