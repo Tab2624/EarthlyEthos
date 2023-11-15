@@ -24,13 +24,12 @@ const TrendingProduct = (props) => {
           <h5>
             {props.product.productName}{" "}
             <span class="badge text-bg-danger">{checkCategory()}</span>
-            <span class="badge text-bg-secondary">Trending</span>
           </h5>
           <hr />
           <p>{props.product.description}</p>
           <div className="justify-around d-flex">
-            <Link to="/products/:id" className="shadow btn btn-primary">View Product</Link>
-            <button className="shadow btn btn-success">Add to cart</button>
+            <Link to={`/products/${props.product._id}`} className="shadow btn btn-primary">View Product</Link>
+            <button onClick={() => props.addToCart(props.product)} className="shadow btn btn-success">Add to cart</button>
           </div>
         </div>
       </div>

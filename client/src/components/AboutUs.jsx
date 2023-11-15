@@ -1,6 +1,20 @@
 import React from "react";
+import { useEffect, useState } from "react";
+
 
 const AboutUs = (props) => {
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+
+    // Optionally, you can add a cleanup function to scroll back to the top
+    // when the component is unmounted
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
   return (
     <div>
       <div className="large-margin-top-2 d-flex">

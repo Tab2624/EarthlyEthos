@@ -3,7 +3,7 @@ import React from "react";
 const TrashCan = (props) => {
   return (
     <div>
-      <button className="btn">
+      <button onClick={() => props.removeFromCart(props.index)} className="btn">
         <img
           width="25"
           height="25"

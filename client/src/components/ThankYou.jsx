@@ -1,6 +1,20 @@
 import React from "react";
+import { useEffect, useState } from "react";
+
 
 const ThankYou = (props) => {
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+
+    // Optionally, you can add a cleanup function to scroll back to the top
+    // when the component is unmounted
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
   return (
     <div className="container">
       <div className="text-center large-margin-top-2">
