@@ -162,7 +162,7 @@ const Navbar = (props) => {
                 src="https://img.icons8.com/pastel-glyph/64/40C057/shopping-cart--v2.png"
                 alt="shopping-cart--v2"
               />
-              - $0.00
+              - $ {props.total}
             </Link>
           </div>
           <ProfilePhoto />
