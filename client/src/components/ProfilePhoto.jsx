@@ -1,3 +1,4 @@
+/*global google*/
 import React, { useEffect, useRef, useState } from "react";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -27,7 +28,6 @@ const ProfilePhoto = (props) => {
     setIsProfileBoxOpen(false);
   };
 
-  /*global google*/
   useEffect(() => {
     // Check for the existence of the sign-in div
     if (!signInDivRef.current) return;
