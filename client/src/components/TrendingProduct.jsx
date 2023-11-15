@@ -16,13 +16,12 @@ const TrendingProduct = (props) => {
         <img
           src={props.product.image}
           className="width-300 height-300"
-          alt={props.product.name}
+          alt={props.product.productName}
         />
         <div className="mt-3">
           <h5>
             {props.product.productName}{" "}
             <span class="badge text-bg-danger">{checkCategory()}</span>
-            {props.product.productName}{" "}
             <span class="badge text-bg-secondary">Trending</span>
           </h5>
           <hr />
