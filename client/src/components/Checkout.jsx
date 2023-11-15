@@ -6,9 +6,9 @@ import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 const Checkout = (props) => {
   const [price, setPrice] = useState(0);
-  const [shippingCost, setShippingCost] = useState("1");
+  const [shippingCost, setShippingCost] = useState("0");
   const [newPrice, setNewPrice] = useState(price);
-  const [donationCost, setDonationCost] = useState("2");
+  const [donationCost, setDonationCost] = useState("1");
   const [finalPrice, setFinalPrice] = useState(price);
 
   const [firstName, setFirstName] = useState("");
@@ -24,6 +24,10 @@ const Checkout = (props) => {
   const [bZipCode, setbZipCode] = useState("");
   const [bCity, setbCity] = useState("");
   const [bState, setbState] = useState("");
+
+  const [cardNumber, setCardNumber] = useState("");
+  const [CVCNumber, setCVCNumber] = useState("");
+  const [expirationDate, setExpirationDate] = useState("");
 
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -57,6 +61,14 @@ const Checkout = (props) => {
 
   const fieldError3 = () => {
     return email !== confirmEmail ? "Emails must match" : null
+  }
+
+  const fieldError4 = () => {
+    let errorMessage = [];
+    errorMessage.push(cardNumber.length > 0 && cardNumber.length < 10 ? "Card number must be at least 10 Characters. " : "");
+    errorMessage.push(CVCNumber.length == 0 || CVCNumber.length != 3 ? "" : "CVC must be 3 characters");
+    errorMessage.push(expirationDate.length == 0 || expirationDate.length != 4 ? "" : "Expiration date must be 4 characters ");
+    return errorMessage;
   }
 
   const fieldError5 = () => {
@@ -439,6 +451,11 @@ const Checkout = (props) => {
             <Accordion.Body>
               <h5 className="mt-2">Card Information</h5>
               <hr />
+              {fieldError4().map((error, index) => (
+                  <p key={index} className="badge text-bg-danger me-2">
+                    {error}
+                  </p>
+                ))}
               <div className="input-group">
                 <span className="input-group-text">Card Information</span>
                 <input
@@ -446,18 +463,27 @@ const Checkout = (props) => {
                   aria-label="card-number"
                   className="form-control w-50"
                   placeholder="Card Number"
+                  onChange={(e) => {
+                    setCardNumber(e.target.value);
+                  }}
                 />
                 <input
                   type="text"
                   aria-label="cvc"
                   className="form-control"
                   placeholder="CVC"
+                  onChange={(e) => {
+                    setCVCNumber(e.target.value);
+                  }}
                 />
                 <input
                   type="text"
                   aria-label="expiration-date"
                   className="form-control"
                   placeholder="MM/YY"
+                  onChange={(e) => {
+                    setExpirationDate(e.target.value);
+                  }}
                 />
               </div>
               <h5 className="mt-4">Billing Address</h5>
