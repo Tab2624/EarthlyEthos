@@ -3,14 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import { useParams, Link } from "react-router-dom";
 
-
 const TrendingProduct = (props) => {
-
   const checkCategory = () => {
-    if (props.categoryname === "Hot" || props.categoryname === "Trending" || props.categoryname === "New") {
-      return props.categoryname
+    if (
+      props.categoryname === "Hot" ||
+      props.categoryname === "Trending" ||
+      props.categoryname === "New"
+    ) {
+      return props.categoryname;
     }
-  }
+  };
 
   return (
     <div id="product" className="p-3 m-1 border rounded">
@@ -28,8 +30,23 @@ const TrendingProduct = (props) => {
           <hr />
           <p>{props.product.description}</p>
           <div className="justify-around d-flex">
-            <Link to={`/products/${props.product._id}`} className="shadow btn btn-primary">View Product</Link>
-            <button onClick={() => props.addToCart(props.product)} className="shadow btn btn-success">Add to cart</button>
+            <Link
+              to={`/products/${props.product._id}`}
+              className="shadow btn btn-primary"
+            >
+              View Product
+            </Link>
+            <button
+              onClick={() => {
+                props.addToCart(props.product);
+                alert(
+                  `You have added ${props.product.productName} to your cart`
+                );
+              }}
+              className="shadow btn btn-success"
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       </div>

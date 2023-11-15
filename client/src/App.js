@@ -19,6 +19,7 @@ import "./App.css";
 
 
 const App = () => {
+
   (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
       v.onload = function() {
@@ -34,6 +35,8 @@ const App = () => {
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem('cartItems')) || []
   );
+
+  const [total, setTotal] = useState(0)
 
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -51,9 +54,23 @@ const App = () => {
     });
   };
 
+  const calculateTotal = () => {
+    let netTotal = 0;
+    for (const item of cartItems) {
+      netTotal += item.price;
+    }
+    return netTotal;
+  };
+
+  useEffect(() => {
+    const total = calculateTotal();
+    setTotal(total)
+  }, [cartItems]);
+
+
   return (
     <Provider store={store}>
-        <TestNav/>
+        <TestNav total={total}/>
         <Routes>
           <Route path="/" element={<Landing/>}/>
           <Route path="/category" element={<CategoryOne/>}/>
