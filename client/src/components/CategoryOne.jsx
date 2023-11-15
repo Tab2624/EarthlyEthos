@@ -7,50 +7,18 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 const CategoryOne = (props) => {
-  // const products = [
-  //   {
-  //     name: "Backpack",
-  //     image:
-  //       "https://www.stoneycloverlane.com/cdn/shop/products/0326_Shot_13_Hand_Model_Classic_Backpack_CottonCandy_0271_RT_V3_grande.jpg?v=1650573274",
-  //     description: "This is a backpack",
-  //     price: 14.99,
-  //   },
-  //   {
-  //     name: "Mousepad",
-  //     image:
-  //       "https://m.media-amazon.com/images/I/61RheQjHm+L._AC_UF894,1000_QL80_.jpg",
-  //     description: "Mousepad which is ethically sourced",
-  //     price: 10.99,
-  //   },
-  //   {
-  //     name: "Edible Forks",
-  //     image:
-  //       "https://i.cbc.ca/1.4763252.1532634753!/fileImage/httpImage/bakey-s-3.jpg",
-  //     description: "Edible forks instead of plastic!",
-  //     price: 12.0,
-  //   },
-  //   {
-  //     name: "Go Green shirt",
-  //     image:
-  //       "https://i.pinimg.com/originals/a4/6a/bb/a46abbaf15440e5daf83e9350fc4e9b7.jpg",
-  //     description: "Recycled material shirt, sport the green!",
-  //     price: 19.99,
-  //   },
-  //   {
-  //     name: "Reuseable bag",
-  //     image:
-  //       "https://cdn.shopify.com/s/files/1/0070/7032/files/blank_tote_merch_swag_fashion_print_on_demand.jpg?v=1689965049",
-  //     description: "Reuseable and recycled bag",
-  //     price: 9.99,
-  //   },
-  //   {
-  //     name: "Reuseable tupperware silicone lids",
-  //     image:
-  //       "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1681744106-orblue-silicone-stretch-lids-643d60d5ac251.jpg?crop=1xw:1xh;center,top&resize=980:*",
-  //     description: "Reuseable silicone lids",
-  //     price: 9.99,
-  //   },
-  // ];
+  
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+
+    // Optionally, you can add a cleanup function to scroll back to the top
+    // when the component is unmounted
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
   const { categoryname } = useParams();
   console.log(categoryname)
   const [category, setCategory] = useState("")
@@ -120,7 +88,7 @@ const CategoryOne = (props) => {
         <hr />
         <div className="flex-wrap d-flex w-100">
           {product.map((product) => (
-            <TrendingProduct key={product.productName} product={product} categoryname={categoryname} />
+            <TrendingProduct key={product.productName} product={product} categoryname={categoryname} addToCart={props.addToCart}/>
           ))}
         </div>
       </div>

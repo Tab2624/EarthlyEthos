@@ -1,4 +1,5 @@
 import React from 'react'
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 const CategoryBox = (props) => {
   return (
@@ -15,7 +16,7 @@ const CategoryBox = (props) => {
           </h5>
           <hr />
           <div className="d-flex justify-center">
-            <button className="btn btn-primary shadow">View Category</button>
+            <Link to={props.category.url} className="btn btn-primary shadow">View Category</Link>
           </div>
         </div>
       </div>

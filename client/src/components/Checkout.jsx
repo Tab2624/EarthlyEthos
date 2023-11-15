@@ -7,6 +7,18 @@ import { useSelector } from 'react-redux';
 
 
 const Checkout = (props) => {
+  
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+
+    // Optionally, you can add a cleanup function to scroll back to the top
+    // when the component is unmounted
+    return () => {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
   const user = useSelector(state => state.user); // Adjust the selector based on your state structure
   console.log(user)
   const [price, setPrice] = useState(0);
@@ -86,58 +98,6 @@ const Checkout = (props) => {
     return errorMessage;
   };
 
-  const products = [
-    {
-      name: "Backpack",
-      image:
-        "https://www.stoneycloverlane.com/cdn/shop/products/0326_Shot_13_Hand_Model_Classic_Backpack_CottonCandy_0271_RT_V3_grande.jpg?v=1650573274",
-      description: "This is a backpack",
-      price: 14.99,
-    },
-    {
-      name: "Mousepad",
-      image:
-        "https://m.media-amazon.com/images/I/61RheQjHm+L._AC_UF894,1000_QL80_.jpg",
-      description: "Mousepad which is ethically sourced",
-      price: 10.99,
-    },
-    {
-      name: "Edible Forks",
-      image:
-        "https://i.cbc.ca/1.4763252.1532634753!/fileImage/httpImage/bakey-s-3.jpg",
-      description: "Edible forks instead of plastic!",
-      price: 12.0,
-    },
-    {
-      name: "Go Green shirt",
-      image:
-        "https://i.pinimg.com/originals/a4/6a/bb/a46abbaf15440e5daf83e9350fc4e9b7.jpg",
-      description: "Recycled material shirt, sport the green!",
-      price: 19.99,
-    },
-    {
-      name: "Reuseable bag",
-      image:
-        "https://cdn.shopify.com/s/files/1/0070/7032/files/blank_tote_merch_swag_fashion_print_on_demand.jpg?v=1689965049",
-      description: "Reuseable and recycled bag",
-      price: 9.99,
-    },
-    {
-      name: "Reuseable tupperware silicone lids",
-      image:
-        "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1681744106-orblue-silicone-stretch-lids-643d60d5ac251.jpg?crop=1xw:1xh;center,top&resize=980:*",
-      description: "Reuseable silicone lids",
-      price: 9.99,
-    },
-    {
-      name: "Cow Statue",
-      image:
-        "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1681744106-orblue-silicone-stretch-lids-643d60d5ac251.jpg?crop=1xw:1xh;center,top&resize=980:*",
-      description: "Small cow statuette",
-      price: 9.99,
-    },
-  ];
-
   function calculateTotal(products) {
     let total = 0;
     for (let product of products) {
@@ -152,19 +112,19 @@ const Checkout = (props) => {
   }
 
   useEffect(() => {
-    const total = calculateTotal(products);
+    const total = calculateTotal(props.cartItems);
     setPrice(total);
-  }, []);
+  }, [props.cartItems]);
 
   useEffect(() => {
     const newTotal = calculateTotalNew(shippingCost, price);
     setNewPrice(newTotal);
-  }, [donationCost, shippingCost, price, finalPrice]);
+  }, [donationCost, shippingCost, price, finalPrice, props.cartItems]);
 
   useEffect(() => {
     const finalTotal = calculateTotalNew(donationCost, newPrice);
     setFinalPrice(finalTotal);
-  }, [shippingCost, donationCost, price]);
+  }, [shippingCost, donationCost, price, props.cartItems]);
 
   const handleShippingChange = (event) => {
     setShippingCost(event.target.value);
@@ -181,15 +141,15 @@ const Checkout = (props) => {
           <Accordion.Item eventKey="0">
             <Accordion.Header>View Cart - $ {newPrice}</Accordion.Header>
             <Accordion.Body>
-              {products.map((product) => (
+              {props.cartItems.map((product, index) => (
                 <div
-                  id={product.name}
+                  id={product.productName}
                   className="justify-between p-1 m-1 w-100 border-bottom d-flex"
                 >
-                  <p>{product.name}</p>
+                  <p>{product.productName}</p>
                   <div className="d-flex">
                     <p>$ {product.price}</p>
-                    <TrashCan />
+                    <TrashCan index={index} removeFromCart={props.removeFromCart}/>
                   </div>
                 </div>
               ))}
