@@ -13,6 +13,7 @@ import Cart from "./components/Cart";
 import AboutUs from "./components/AboutUs";
 import ProductViewOne from "./components/ProductViewOne";
 import Checkout from "./components/Checkout";
+import ThankYou from "./components/ThankYou";
 
 const App = () => {
   
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/about-us" element={<AboutUs/>}/>
           <Route path="/product/:id" element={<ProductViewOne/>}/>
           <Route path="/checkout" element={<Checkout/>}/>
+          <Route path="/thank-you" element={<ThankYou/>}/>
         </Routes>
       <Footer/>
     </Provider>

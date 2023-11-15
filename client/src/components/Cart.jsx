@@ -83,14 +83,14 @@ const Cart = (props) => {
             </div>
         </div>
             ))}
-            <Link to="/shop" className="btn btn-outline-success m-2">Add a new item</Link>
+            <Link to="/shop" className="btn btn-outline-success m-2">Continue Shopping</Link>
         </div>
         <div className="w-100 border-bottom d-flex justify-between p-1 m-2">
             <h3>Total</h3>
             <h3>$ {price}</h3>
         </div>
         <div className="d-flex justify-center">
-        <Link to="/" className="btn btn-success w-25">Continue to Checkout</Link>
+        <Link to="/checkout" className="btn btn-success w-25">Continue to Checkout</Link>
         </div>
     </div>
   )
