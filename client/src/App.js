@@ -12,6 +12,8 @@ import Shop from "./components/Shop";
 import Cart from "./components/Cart";
 import AboutUs from "./components/AboutUs";
 import ProductViewOne from "./components/ProductViewOne";
+import Checkout from "./components/Checkout";
+import ThankYou from "./components/ThankYou";
 
 const App = () => {
   
@@ -26,12 +28,14 @@ const App = () => {
         )} */}
         <Routes>
           <Route path="/" element={<Landing/>}/>
-          <Route path="/category/" element={<CategoryOne/>}/>
+          <Route path="/category" element={<CategoryOne/>}/>
           <Route path="/category/:categoryname" element={<CategoryOne/>}/>
           <Route path="/shop" element={<Shop/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/about-us" element={<AboutUs/>}/>
           <Route path="/product/:id" element={<ProductViewOne/>}/>
+          <Route path="/checkout" element={<Checkout/>}/>
+          <Route path="/thank-you" element={<ThankYou/>}/>
         </Routes>
       <Footer/>
     </Provider>
