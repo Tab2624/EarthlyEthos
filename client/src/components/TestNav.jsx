@@ -8,23 +8,33 @@ import ProfilePhoto from "./ProfilePhoto";
 const Navbar = (props) => {
   const dropdownRef = useRef(null);
 
+  const navigate = useNavigate()
+  const goHome = (()=>{
+    navigate('/')
+  })
+
   useEffect(() => {
     const dropdownElement = dropdownRef.current;
     if (dropdownElement) {
       new window.bootstrap.Dropdown(dropdownElement);
     }
   }, []);
+  
   return (
     <>
       <div className="fixed-top">
         {/* First Navbar */}
         <div className="flex items-center justify-between p-1 border border-gray-200 bg-success-subtle text-dark">
           <div className="flex p-1">
-            <Link className="p-1" to="/">English</Link>
-            <Link className="p-1" to="/about-us">About Us</Link>
+            <Link className="p-1" to="/">
+              English
+            </Link>
+            <Link className="p-1" to="/about-us">
+              About Us
+            </Link>
           </div>
           <div className="flex items-center p-1">
-            <a href="#">Contact Us</a>
+          <Link to="/about-us" className="">Contact Us</Link>
             <img
               className="p-1 ms-2"
               width="30"
@@ -51,25 +61,28 @@ const Navbar = (props) => {
         {/* Second nav bar */}
         <div className="justify-between bg-white border border-gray-200 sticky-top d-flex align-items-center pe-2 ps-2">
           <img
+          onClick={()=> goHome()}
             src="/static/images/EarthlyEthosLogo.png"
             alt="earthly ethos logo"
             width="190px"
+            style={{cursor: "pointer"}}
           />
 
           {/* Dropdown menu */}
           <div class="btn-group ">
-              <Link class="btn btn-outline-success success-text" to="/shop">
-                Shop
-              </Link>
+            <Link class="btn btn-outline-success success-text" to="/shop">
+              Shop
+            </Link>
             <button
               type="button"
               class="btn btn-outline-success success-text dropdown-toggle dropdown-toggle-split"
               data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+              aria-expanded="false">
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
-            <ul className="dropdown-menu shadow" aria-labelledby="dropdownMenuButton">
+            <ul
+              className="shadow dropdown-menu"
+              aria-labelledby="dropdownMenuButton">
               <div className="d-flex">
                 <li>
                   <Link className="dropdown-item" to="/">
@@ -77,46 +90,35 @@ const Navbar = (props) => {
                   </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Clothing
-                  </a>
+                  <Link to="/category/Clothing" className="dropdown-item">Clothing</Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Lifestyle
-                  </a>
+                <Link to="/category/Lifestyle" className="dropdown-item">Lifestyle</Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Outdoors
-                  </a>
+                <Link to="/category/Outdoors" className="dropdown-item">Outdoors</Link>
                 </li>
               </div>
               <div className="d-flex">
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Pet Products
-                  </a>
+                <Link to="/category/Pet Products" className="dropdown-item">Pet Products</Link>
+
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Personal Care
-                  </a>
+                <Link to="/category/Personal Care" className="dropdown-item">Personal Care</Link>
+
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Essentials
-                  </a>
+                <Link to="/category/Essentials" className="dropdown-item">Essentials</Link>
+
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Upcycled and Recycled
-                  </a>
+                <Link to="/category/Upcycled and Recycled" className="dropdown-item">Upcycled and Recycled</Link>
+
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Garden
-                  </a>
+                <Link to="/category/Garden" className="dropdown-item">Garden</Link>
+
                 </li>
               </div>
               <hr />
@@ -153,8 +155,7 @@ const Navbar = (props) => {
           <div>
             <Link
               className="d-flex btn btn-outline-success align-items-center me-3"
-              to="/cart"
-            >
+              to="/cart">
               <img
                 width="25"
                 height="25"

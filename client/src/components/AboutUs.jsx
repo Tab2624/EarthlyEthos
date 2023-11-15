@@ -5,11 +5,11 @@ const AboutUs = (props) => {
     <div>
       <div className="large-margin-top-2 d-flex">
         <img
-          className="flex-short border"
+          className="border flex-short"
           src="https://i.pinimg.com/736x/fd/d3/24/fdd324c8c1bc83420825b7018c34ef1c.jpg"
           alt="caring for the planet"
         />
-        <div className="flex-short-2 m-2 text-center ps-5 pe-5 pt-3">
+        <div className="pt-3 m-2 text-center flex-short-2 ps-5 pe-5">
           <h1 className="m-2 text-end">About Us</h1>
           <hr />
           <h3 className="m-2 mt-5">What We Are About</h3>
@@ -69,7 +69,7 @@ const AboutUs = (props) => {
         </div>
       </div>
       <div className="d-flex">
-        <div className="flex-short-2 text-center ps-5 pe-5 pt-3 m-2">
+        <div className="pt-3 m-2 text-center flex-short-2 ps-5 pe-5">
           <h1 className="text-start ">Store Policies</h1>
           <hr />
           <ul>
@@ -121,14 +121,14 @@ const AboutUs = (props) => {
           </ul>
         </div>
         <img
-          className="flex-short border"
+          className="border flex-short"
           src="https://blog.techguard.com/hubfs/Policies_Procedures.png"
           alt="policies"
         />
       </div>
       <div className="d-flex">
         <img className="flex-short" width="400px" src="https://bluerevolution.ifremer.fr/var/storage/images/_aliases/fullsize/medias-ifremer/medias-bluerevolution/contact-us/1811720-1-eng-GB/Contact-us.png" alt="contact us" />
-        <div className="flex-short-2 ps-5 pe-5 pt-3 m-2 mt-5 text-center">
+        <div className="pt-3 m-2 mt-5 text-center flex-short-2 ps-5 pe-5" id="contactUs">
             <h1 className="text-end">Contact Us</h1>
             <hr />
             <h3>
@@ -143,7 +143,7 @@ const AboutUs = (props) => {
             <h3>
                 Social Media
             </h3>
-            <div className="d-flex justify-center">
+            <div className="justify-center d-flex">
             <img
               className="p-1 ms-2"
               width="48"

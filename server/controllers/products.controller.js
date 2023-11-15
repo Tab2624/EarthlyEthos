@@ -3,15 +3,51 @@ const Category = require('../models/category.model');
 const Product = require('../models/products.model');
 
 const categories = [
-  'Home',
   'Clothing',
-  'Lifestyle Outdoors',
+  'Lifestyle',
+  'Outdoors',
   'Pet Products',
   'Personal Care',
   'Essentials',
   'Upcycled and Recycled',
   'Garden',
+  'Hot',
+  'Trending',
+  'New',
 ];
+
+// Route handler to get a single category with all products
+const getOneCategory = async (req, res) => {
+  try {
+    const { categoryName } = req.params;
+
+    const categoryWithProducts = await Category.findOne({ name: categoryName }).populate({
+      path: 'products',
+      model: 'Product',
+      select: 'productName price reviews image description',
+    });
+
+    if (!categoryWithProducts) {
+      return res.status(404).json({ error: 'Category not found' });
+    }
+
+    const categoryWithImages = {
+      ...categoryWithProducts.toObject(),
+      products: categoryWithProducts.products.map(product => ({
+        ...product.toObject(),
+      })),
+    };
+
+    res.status(200).json({ category: categoryWithImages });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = {
+  // ... (your existing code)
+  getOneCategory,
+};
 
 // Utility function for generating product names
 const generateProductName = (category) => {
@@ -146,4 +182,5 @@ module.exports = {
   getAllProducts,
   clearAllProducts,
   addFakeProductToCategory,
+  getOneCategory,
 };

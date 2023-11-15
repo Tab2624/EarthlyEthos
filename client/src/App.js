@@ -22,10 +22,6 @@ const App = () => {
   return (
     <Provider store={store}>
         <TestNav/>
-        {/* <div id="signInDiv" hidden={user !== null}></div>
-        {user && Object.keys(user).length !== 0 && (
-          <button onClick={handleSignOut}>Sign Out</button>
-        )} */}
         <Routes>
           <Route path="/" element={<Landing/>}/>
           <Route path="/category" element={<CategoryOne/>}/>
