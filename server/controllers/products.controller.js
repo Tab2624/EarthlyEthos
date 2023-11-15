@@ -175,6 +175,14 @@ const clearAllProducts = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+const findOneSingleProduct = (req, res) => {
+  Product.findOne({ _id: req.params.id })
+      .then(oneSingleProduct => {
+          res.json({ products: oneSingleProduct })
+      })
+      .catch((err) => {
+          res.json(err)
+      });}
 
 module.exports = {
   addFakeProductToRandomCategory,
@@ -183,4 +191,5 @@ module.exports = {
   clearAllProducts,
   addFakeProductToCategory,
   getOneCategory,
+  findOneSingleProduct
 };

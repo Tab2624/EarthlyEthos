@@ -7,6 +7,9 @@ module.exports = (app) => {
   //Use app.get() for getting a category and all of its products
   app.get('/api/category/:categoryName', ProductController.getOneCategory);
 
+  //Use app.get() for getting a single product based on id parameter
+  app.get("/api/products/:id", ProductController.findOneSingleProduct);
+
   // Use app.post() for adding fake products to a random category
   app.post("/api/addFakeProductToRandomCategory", ProductController.addFakeProductToRandomCategory);
 
