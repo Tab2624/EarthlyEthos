@@ -3,6 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 
 const TrendingProduct = (props) => {
+
+  const checkCategory = () => {
+    if (props.categoryname === "Hot" || props.categoryname === "Trending" || props.categoryname === "New") {
+      return props.categoryname
+    }
+  }
+
   return (
     <div id="product" className="m-1 border rounded p-3">
       <div className="width-300">
@@ -13,8 +20,8 @@ const TrendingProduct = (props) => {
         />
         <div className="mt-3">
           <h5>
-            {props.product.name}{" "}
-            <span class="badge text-bg-secondary">Trending</span>
+            {props.product.productName}{" "}
+            <span class="badge text-bg-danger">{checkCategory()}</span>
           </h5>
           <hr />
           <p>{props.product.description}</p>

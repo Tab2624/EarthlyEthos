@@ -98,21 +98,21 @@ const CategoryOne = (props) => {
         <div className="justify-around d-flex">
           <div id="trending-cat-one" className="p-4 m-3 text-center border ">
             <h1 className="margin-top new-title">Trending</h1>
-            <button className="shadow btn btn-success margin-top margin-bottom">
+            <Link to="/category/Trending" className="shadow btn btn-success margin-top margin-bottom">
               Shop Trending
-            </button>
+            </Link>
           </div>
           <div id="new-cat-one" className="p-4 m-3 text-center border ">
             <h1 className="margin-top new-title">New</h1>
-            <button className="shadow btn btn-success margin-top margin-bottom">
+            <Link to="/category/New" className="shadow btn btn-success margin-top margin-bottom">
               Shop New
-            </button>
+            </Link>
           </div>
           <div id="hot-cat-one" className="p-4 m-3 text-center border ">
             <h1 className="margin-top new-title">Hot</h1>
-            <button className="shadow btn btn-success margin-top margin-bottom">
+            <Link to="/category/Hot" className="shadow btn btn-success margin-top margin-bottom">
               Shop Hot
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -120,7 +120,7 @@ const CategoryOne = (props) => {
         <hr />
         <div className="flex-wrap d-flex w-100">
           {product.map((product) => (
-            <TrendingProduct key={product.productName} product={product} />
+            <TrendingProduct key={product.productName} product={product} categoryname={categoryname} />
           ))}
         </div>
       </div>

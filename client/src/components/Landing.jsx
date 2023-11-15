@@ -84,11 +84,12 @@ const Landing = () => {
       <div id="photo-heroes" className="d-flex w-100">
         <div id="photo-hero-1" className="text-center border w-50">
           <h1 className="fs-1">Top Products</h1>
-          <button className="shadow btn btn-lg btn-success">Shop Now</button>
+          
+          <Link to="/category/Hot" className=""><button className="shadow btn btn-lg btn-success">Shop Now</button></Link>
         </div>
         <div id="photo-hero-2" className="text-center border w-50">
           <h1 className="fs-1">New Arrivals</h1>
-          <Link to="/category/Lifestyle" className="shadow btn btn-lg btn-success">Shop Now</Link>
+          <Link to="/category/New" className="shadow btn btn-lg btn-success">Shop Now</Link>
         </div>
       </div>
 
