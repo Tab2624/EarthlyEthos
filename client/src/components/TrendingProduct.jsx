@@ -4,7 +4,7 @@ import "../App.css";
 
 const TrendingProduct = (props) => {
   return (
-    <div id="product" className="m-1 border rounded p-3">
+    <div id="product" className="p-3 m-1 border rounded">
       <div className="width-300">
         <img
           src={props.product.image}
@@ -13,14 +13,14 @@ const TrendingProduct = (props) => {
         />
         <div className="mt-3">
           <h5>
-            {props.product.name}{" "}
+            {props.product.productName}{" "}
             <span class="badge text-bg-secondary">Trending</span>
           </h5>
           <hr />
           <p>{props.product.description}</p>
-          <div className="d-flex justify-around">
-            <button className="btn btn-primary shadow">View Product</button>
-            <button className="btn btn-success shadow">Add to cart</button>
+          <div className="justify-around d-flex">
+            <button className="shadow btn btn-primary">View Product</button>
+            <button className="shadow btn btn-success">Add to cart</button>
           </div>
         </div>
       </div>
