@@ -70,7 +70,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-        <TestNav total={total}/>
+        <TestNav total={total} cartItems={cartItems}/>
         <Routes>
           <Route path="/" element={<Landing/>}/>
           <Route path="/category" element={<CategoryOne/>}/>

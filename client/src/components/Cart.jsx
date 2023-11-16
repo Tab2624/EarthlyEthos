@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import TrashCan from "./TrashCan";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Cart = (props) => {
   useEffect(() => {
@@ -13,6 +14,8 @@ const Cart = (props) => {
       window.scrollTo(0, 0);
     };
   }, []);
+
+  const user = useSelector((state) => state.user);
 
   const [price, setPrice] = useState(0);
   const [message, setMessage] = useState("");
@@ -33,14 +36,11 @@ const Cart = (props) => {
 
   useEffect(() => {
     if (props.cartItems.length === 0) {
-      setMessage("Your cart is empty! Let's change that...")
-    }
-    else {
+      setMessage("Your cart is empty! Let's change that...");
+    } else {
       setMessage("Cart Items: " + props.cartItems.length);
     }
   }, [props.cartItems]);
-
-
 
   return (
     <div className="container large-margin-top-2">
@@ -51,8 +51,7 @@ const Cart = (props) => {
         {props.cartItems.map((product, index) => (
           <div
             id={product.productName}
-            className="justify-between p-1 m-1 w-100 border-bottom d-flex"
-          >
+            className="justify-between p-1 m-1 w-100 border-bottom d-flex">
             <p>{product.productName}</p>
             <div className="d-flex">
               <p>$ {product.price}</p>
@@ -69,9 +68,17 @@ const Cart = (props) => {
         <h3>$ {price}</h3>
       </div>
       <div className="justify-center d-flex">
-        <Link to="/checkout" className="btn btn-success w-25">
-          Continue to Checkout
-        </Link>
+        {user ? (
+          props.cartItems.length > 0 ? (
+            <Link to="/checkout" className="btn btn-success w-25">
+              Continue to Checkout
+            </Link>
+          ) : (
+            <p className="btn btn-secondary">Must add items to cart first</p>
+          )
+        ) : (
+          <p className="btn btn-secondary">Sign in to Continue</p>
+        )}
       </div>
     </div>
   );
