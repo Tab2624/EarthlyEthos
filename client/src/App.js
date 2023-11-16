@@ -76,10 +76,10 @@ const App = () => {
           <Route path="/category" element={<CategoryOne/>}/>
           <Route path="/category/:categoryname" element={<CategoryOne addToCart={addToCart}/>}/>
           <Route path="/shop" element={<Shop/>}/>
-          <Route path="/cart" element={<Cart removeFromCart={removeFromCart} cartItems={cartItems}/>}/>
+          <Route path="/cart" element={<Cart removeFromCart={removeFromCart} cartItems={cartItems} setCartItems={setCartItems}/>}/>
           <Route path="/about-us" element={<AboutUs/>}/>
           <Route path="/products/:id" element={<ProductViewOne addToCart={addToCart}/>}/>
-          <Route path="/checkout" element={<Checkout removeFromCart={removeFromCart} cartItems={cartItems}/>}/>
+          <Route path="/checkout" element={<Checkout removeFromCart={removeFromCart} cartItems={cartItems} />}/>
           <Route path="/thank-you" element={<ThankYou/>}/>
         </Routes>
         

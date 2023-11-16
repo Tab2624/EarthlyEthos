@@ -42,6 +42,9 @@ const Cart = (props) => {
     }
   }, [props.cartItems]);
 
+  const clearCart = () => {
+    props.setCartItems([]); // Set the cart items to an empty array
+  };
   return (
     <div className="container large-margin-top-2">
       <h1>Cart</h1>
@@ -59,6 +62,11 @@ const Cart = (props) => {
             </div>
           </div>
         ))}
+        {
+          props.cartItems.length >0?
+        <p onClick={()=> clearCart()}>Clear Cart</p>
+        : ""
+        }
         <Link to="/shop" className="m-2 btn btn-outline-success">
           Continue Shopping
         </Link>
