@@ -9,7 +9,7 @@ Welcome to EarthlyEthos v.1 , an eco-conscious e-commerce platform committed to 
 
 ![alt text][home]
 
-##Features
+## Features
 - **Product Listings:** Browse a wide range of environmentally friendly products.
 - **User Authentication:** Create accounts, log in, and securely manage your profile.
 - **Shopping Cart:** Add and remove items, and proceed to a secure checkout process.
