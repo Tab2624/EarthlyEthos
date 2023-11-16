@@ -72,7 +72,7 @@ const App = () => {
     <Provider store={store}>
         <TestNav total={total} cartItems={cartItems}/>
         <Routes>
-          <Route path="/" element={<Landing/>}/>
+          <Route path="/" element={<Landing addToCart={addToCart}/>}/>
           <Route path="/category" element={<CategoryOne/>}/>
           <Route path="/category/:categoryname" element={<CategoryOne addToCart={addToCart}/>}/>
           <Route path="/shop" element={<Shop/>}/>

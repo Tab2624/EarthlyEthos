@@ -49,7 +49,7 @@ const Cart = (props) => {
     <div className="container large-margin-top-2">
       <h1>Cart</h1>
       <hr />
-      <div className="p-2 border rounded">
+      <div className="p-2 border rounded shadow-md">
         <h3 className="p-2">{message}</h3>
         {props.cartItems.map((product, index) => (
           <div
@@ -64,10 +64,11 @@ const Cart = (props) => {
         ))}
         {
           props.cartItems.length >0?
-        <p onClick={()=> clearCart()}>Clear Cart</p>
+        <p className="btn btn-danger btn-sm d-inline-block m-2" id="clear-cart" onClick={()=> clearCart()}>Clear Cart</p>
         : ""
         }
-        <Link to="/shop" className="m-2 btn btn-outline-success">
+        <hr/>
+        <Link to="/shop" className="m-2 btn btn-outline-success d-inline-block shadow-md">
           Continue Shopping
         </Link>
       </div>
@@ -78,7 +79,7 @@ const Cart = (props) => {
       <div className="justify-center d-flex">
         {user ? (
           props.cartItems.length > 0 ? (
-            <Link to="/checkout" className="btn btn-success w-25">
+            <Link to="/checkout" className="btn btn-success w-25 ">
               Continue to Checkout
             </Link>
           ) : (

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import CookiesBar from "./CookiesBar";
 import axios from "axios";
 
-const Landing = () => {
+const Landing = (props) => {
 
   useEffect(() => {
     // Scroll to the top when the component mounts
@@ -19,7 +19,7 @@ const Landing = () => {
       window.scrollTo(0, 0);
     };
   }, []);
-  
+
   function scrollToRight(idToSelect) {
     let element = document.getElementById(idToSelect);
     element.scrollLeft += 900;
@@ -115,7 +115,7 @@ const Landing = () => {
             </div>
             <div className="d-flex rowToMove" id="rowMoving1">
               {products.map((product) => (
-                <TrendingProduct product={product} />
+                <TrendingProduct product={product} addToCart={props.addToCart} />
               ))}
             </div>
 
