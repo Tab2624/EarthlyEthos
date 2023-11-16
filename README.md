@@ -1,6 +1,6 @@
-[sign-in]: https://imgur.com/a/5024yRm
+[sign-in]: https://i.imgur.com/o3F2QDf.png
 [home]: https://i.imgur.com/Dt3SsSF.png
-
+[beezly]: https://i.imgur.com/DUHSFtH.png
 
 # Welcome to EarthlyEthos!
 
@@ -41,8 +41,12 @@ Welcome to EarthlyEthos v.1 , an eco-conscious e-commerce platform committed to 
 
 ![alt text][sign-in]
 
-##Installation
-###Clone the repository:
+### VoiceFlow (A.K.A Beezly!):
+
+![alt text][beezly]
+
+## Installation
+### Clone the repository:
 
 ```bash
 git clone https://github.com/Tab2624/EarthlyEthos.git
@@ -94,7 +98,7 @@ npm start
 
 ## Open your browser and navigate to 'http://localhost:3000' to access EarthlyEthos.
 
-#Contributing
+# Contributing
 Contributions to EarthlyEthos are welcome! If you'd like to contribute, please follow the community guidelines.
 
 Thank you for using EarthlyEthos! Happy shopping and living sustainably! 🌍✨
