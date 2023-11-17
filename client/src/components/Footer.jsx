@@ -1,4 +1,6 @@
 import React from "react";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
+
 
 const Footer = (props) => {
   return (
@@ -26,13 +28,13 @@ const Footer = (props) => {
             <h5>Information</h5>
           </li>
           <li>
-            <a href="#">About Us</a>
+            <Link to="/about-us" >About Us</Link>
           </li>
           <li>
-            <a href="#">Returns & Shipping Policy</a>
+            <Link to="/about-us" >Returns & Shipping Policy</Link>
           </li>
           <li>
-            <a href="#">Store Policy</a>
+            <Link to="/about-us" >Store Policy</Link>
           </li>
         </ul>
       </div>
@@ -41,7 +43,7 @@ const Footer = (props) => {
           <li>
             <h5>Contact</h5>
           </li>
-          <li><a href="#">Contact Us</a></li>
+          <li><Link to="/about-us" >Contact Us</Link></li>
           <div className="d-flex">
             <img
               className="p-1 ms-2"

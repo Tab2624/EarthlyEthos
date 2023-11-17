@@ -1,6 +1,7 @@
 import React from "react";
 import CategoryBox from "./CategoryBox";
 import { useEffect, useState } from "react";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 
 const Shop = (props) => {
@@ -73,23 +74,23 @@ const Shop = (props) => {
         <div
           id="shop-new"
           className="items-center text-center border flex-short">
-          <button className="shadow btn btn-lg btn-success margin-top-x margin-bottom-x">
+          <Link to="/category/New" className="shadow btn btn-lg btn-success margin-top-x margin-bottom-x">
             Shop New
-          </button>
+          </Link>
         </div>
         <div
           id="shop-trending"
           className="items-center text-center border flex-short">
-          <button className="shadow btn btn-lg btn-success margin-top-x margin-bottom-x">
+          <Link to="/category/Trending" className="shadow btn btn-lg btn-success margin-top-x margin-bottom-x">
             Shop Trending
-          </button>
+          </Link>
         </div>
         <div
           id="shop-hot"
           className="items-center text-center border flex-short">
-          <button className="shadow btn btn-lg btn-success margin-top-x margin-bottom-x">
+          <Link to="/category/Hot" className="shadow btn btn-lg btn-success margin-top-x margin-bottom-x">
             Shop Hot
-          </button>
+          </Link>
         </div>
       </div>
 
