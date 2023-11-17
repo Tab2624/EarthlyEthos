@@ -1,29 +1,22 @@
 [sign-in]: https://i.imgur.com/o3F2QDf.png
 [home]: https://i.imgur.com/Dt3SsSF.png
 [beezly]: https://i.imgur.com/DUHSFtH.png
-[overview]: https://img.icons8.com/plasticine/100/overview-pages-2.png
-[features]: https://img.icons8.com/dusk/64/extra-features.png
-[technology]: https://img.icons8.com/clouds/100/technology.png
-[front-end]: https://img.icons8.com/clouds/100/code.png
-[back-end]: https://img.icons8.com/dusk/64/javascript.png
-[google]: 
-
 
 # 🌍 Welcome to EarthlyEthos! 🌏
 
-## Overview 
+## Overview 🌐
 Welcome to EarthlyEthos v.1 , an eco-conscious e-commerce platform committed to providing environmentally friendly products. This project is built with the MERN stack (MongoDB, Express, React, Node.js) and is designed to offer a seamless shopping experience for users passionate about sustainable living.
 
 ![alt text][home]
 
-## Features ![alt text][features]
+## Features 🛠️
 - **Product Listings:** Browse a wide range of environmentally friendly products.
 - **User Authentication:** Create accounts, log in, and securely manage your profile.
 - **Shopping Cart:** Add and remove items, and proceed to a secure checkout process.
 - **Order History:** Track your purchase history for a personalized shopping experience. *Coming in v.2!*
 - **Admin Panel:** Manage products, orders, and user accounts with an intuitive admin interface. *Coming in v.2!*
 
-## Technologies Used ![alt text][technology]:
+## Technologies Used 🚀:
 
 ### Frontend:
 - React.js
@@ -37,18 +30,18 @@ Welcome to EarthlyEthos v.1 , an eco-conscious e-commerce platform committed to 
 - Mongoose as the ODM
 - JWT for  authentication 
 
-### Additional Technologies:
+### Additional Technologies 🚀:
 - faker-js
 - bootstrap
 - Google oAuth
 - VoiceFlow
 - and more!
 
-### Google oAuth:
+### Google oAuth 🔍:
 
 ![alt text][sign-in]
 
-### VoiceFlow (A.K.A Beezly!):
+### VoiceFlow (A.K.A Beezly!) 🐝:
 
 ![alt text][beezly]
 
